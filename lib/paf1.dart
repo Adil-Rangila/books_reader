@@ -4,7 +4,6 @@ import 'package:books_reader/global.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:syncfusion_flutter_pdfviewer/pdfviewer.dart';
-import 'package:syncfusion_flutter_pdf/pdf.dart';
 
 class PDF1 extends StatefulWidget {
   const PDF1({super.key});
@@ -63,9 +62,8 @@ class _PDF1State extends State<PDF1> {
                 color: Colors.white,
               ),
               onPressed: () async {
-                searchResult = await _pdfViewerController.searchText(
-                    'The Mark of Zorro',
-                    searchOption: TextSearchOption.caseSensitive);
+                searchResult =
+                    await _pdfViewerController.searchText('Zorro', b1LastPage);
 
                 log('Total instance count: ${searchResult.totalInstanceCount}');
               },
@@ -113,8 +111,9 @@ class _PDF1State extends State<PDF1> {
                         String searchText =
                             bookMarkText.replaceAll(RegExp(r"\s+"), " ");
                         searchResult = await _pdfViewerController.searchText(
-                            searchText,
-                            searchOption: TextSearchOption.caseSensitive);
+                          searchText,
+                          b1LastPage,
+                        );
                         _pdfViewerController
                             .jumpToPage(int.parse(b1BookMarks[index]['page']));
                         isShowBookMark = false;

@@ -213,16 +213,16 @@ packages:
   syncfusion_flutter_pdf:
     dependency: transitive
     description:
-      name: syncfusion_flutter_pdf
-      url: "https://pub.dartlang.org"
-    source: hosted
+      path: "syncfusion_flutter_pdfviewer/syncfusion_flutter_pdf"
+      relative: true
+    source: path
     version: "20.2.46"
   syncfusion_flutter_pdfviewer:
     dependency: "direct main"
     description:
-      name: syncfusion_flutter_pdfviewer
-      url: "https://pub.dartlang.org"
-    source: hosted
+      path: syncfusion_flutter_pdfviewer
+      relative: true
+    source: path
     version: "20.2.46-beta"
   syncfusion_pdfviewer_macos:
     dependency: transitive
