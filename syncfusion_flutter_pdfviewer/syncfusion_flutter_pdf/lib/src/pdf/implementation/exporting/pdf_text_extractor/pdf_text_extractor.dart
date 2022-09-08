@@ -670,6 +670,7 @@ class PdfTextExtractor {
     bool isMatched = false;
     for (int i = 0; i < searchString.length; i++) {
       final String term = searchString[i];
+      log(term);
       if (searchOption != null &&
           (searchOption == TextSearchOption.caseSensitive ||
               searchOption == TextSearchOption.both)) {

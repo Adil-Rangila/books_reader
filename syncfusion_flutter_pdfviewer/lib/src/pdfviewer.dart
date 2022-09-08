@@ -3266,7 +3266,7 @@ class SfPdfViewerState extends State<SfPdfViewer> with WidgetsBindingObserver {
           .removeListener(_handleTextSearch);
       _textCollection = _pdfTextExtractor?.findText(
         // <String>[_pdfViewerController._searchText],
-        _pdfViewerController._searchText.split(' ').toList(),
+        _pdfViewerController._searchText.split('\n').toList(),
         _pdfViewerController._serachPage,
         searchOption: _pdfViewerController._textSearchOption,
       );
