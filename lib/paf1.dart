@@ -64,7 +64,7 @@ class _PDF1State extends State<PDF1> {
               ),
               onPressed: () async {
                 searchResult = await _pdfViewerController.searchText(
-                  'The fat landlord agreed',
+                  'Chapter  1',
                   b1LastPage - 1,
                   searchOption: TextSearchOption.caseSensitive,
                 );
@@ -117,7 +117,7 @@ class _PDF1State extends State<PDF1> {
                             bookMarkText.replaceAll(RegExp(r"\s+"), " ");
 
                         searchResult = await _pdfViewerController.searchText(
-                          searchText,
+                          bookMarkText,
                           (int.parse(b1BookMarks[index]['page']) - 1),
                           searchOption: TextSearchOption.caseSensitive,
                         );

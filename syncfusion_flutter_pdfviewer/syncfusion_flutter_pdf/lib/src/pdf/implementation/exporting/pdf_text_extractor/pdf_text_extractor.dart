@@ -1,3 +1,4 @@
+import 'dart:developer';
 import 'dart:ui';
 
 import 'package:intl/intl.dart' as bidi;
@@ -524,16 +525,20 @@ class PdfTextExtractor {
             pageResources, page.size.height * 1.3333333333333333);
         renderer.pageRotation = _getPageRotation(page);
         renderer.renderAsImage();
+        String testText = pageText;
+        String testTextFormated = testText.replaceAll(RegExp(r"\s+"), " ");
+        log(testTextFormated);
         String renderedString = '';
         final Map<int, int> combinedGlyphLength = <int, int>{};
         if (renderer.imageRenderGlyphList.isNotEmpty) {
           for (final Glyph glyph in renderer.imageRenderGlyphList) {
             final String currentText = glyph.toUnicode;
-            if (currentText.length > 1) {
-              combinedGlyphLength[renderedString.length] = currentText.length;
-            }
+            // if (currentText.length > 1) {
+            //   combinedGlyphLength[renderedString.length] = currentText.length;
+            // }
             renderedString = renderedString + glyph.toUnicode;
           }
+
           List<Glyph>? visualOrderedTextGlyph;
           if (containsRtl) {
             final Map<String, dynamic> visualOrderResult =
@@ -581,6 +586,10 @@ class PdfTextExtractor {
               }
             }
           }
+          log(renderedString.length.toString());
+          log(testTextFormated.length.toString());
+          log(renderedString);
+          log(testTextFormated);
           final List<String> renderedStringCollection = <String>[
             renderedString
           ];
@@ -732,8 +741,8 @@ class PdfTextExtractor {
       List<MatchedItem> result) {
     if (renderedStringCollection.isNotEmpty &&
         renderedStringCollection[0] != '') {
-      print(searchString.length);
-      print(renderedStringCollection.length);
+      print(searchString);
+      print(renderedStringCollection);
       print(combinedGlyphLength);
       print(glyphListCollection.length);
       print(result.length);
@@ -761,10 +770,7 @@ class PdfTextExtractor {
           int startIndex = 0;
           final int length = currentText.length;
           for (int i = 0; i < renderedStringCollection.length; i++) {
-            while (startIndex <= textLengthCollection
-            
-            
-            [i] &&
+            while (startIndex <= textLengthCollection[i] &&
                 renderedStringCollection[i].contains(currentText, startIndex)) {
               int index =
                   renderedStringCollection[i].indexOf(currentText, startIndex);

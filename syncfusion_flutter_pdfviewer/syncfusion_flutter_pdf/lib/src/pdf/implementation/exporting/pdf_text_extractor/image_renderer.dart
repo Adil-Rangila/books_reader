@@ -697,32 +697,32 @@ class ImageRenderer {
         _textElementWidth = renderedResult['textElementWidth'] as double;
         textMatrix = renderedResult['tempTextMatrix'] as MatrixHelper;
       }
-      if (!structure.isWhiteSpace) {
-        if (_whiteSpace.isNotEmpty &&
-            extractTextElement.isNotEmpty &&
-            _whiteSpace.length == 1) {
-          if (extractTextElement[extractTextElement.length - 1]
-                      .textLineMatrix!
-                      .offsetY ==
-                  element.textLineMatrix!.offsetY &&
-              _whiteSpace[0].textLineMatrix!.offsetY ==
-                  element.textLineMatrix!.offsetY) {
-            if (_whiteSpace[0].text.isNotEmpty) {
-              element.textElementGlyphList
-                  .insert(0, _whiteSpace[0].textElementGlyphList[0]);
-            }
-            extractTextElement.add(_whiteSpace[0]);
+      // if (!structure.isWhiteSpace) {
+      if (_whiteSpace.isNotEmpty &&
+          extractTextElement.isNotEmpty &&
+          _whiteSpace.length == 1) {
+        if (extractTextElement[extractTextElement.length - 1]
+                    .textLineMatrix!
+                    .offsetY ==
+                element.textLineMatrix!.offsetY &&
+            _whiteSpace[0].textLineMatrix!.offsetY ==
+                element.textLineMatrix!.offsetY) {
+          if (_whiteSpace[0].text.isNotEmpty) {
+            element.textElementGlyphList
+                .insert(0, _whiteSpace[0].textElementGlyphList[0]);
           }
-          _whiteSpace = <TextElement>[];
-        }
-        imageRenderGlyphList.addAll(element.textElementGlyphList);
-        if (isExtractLineCollection) {
-          extractTextElement.add(element);
+          extractTextElement.add(_whiteSpace[0]);
         }
         _whiteSpace = <TextElement>[];
-      } else {
-        _whiteSpace.add(element);
       }
+      imageRenderGlyphList.addAll(element.textElementGlyphList);
+      if (isExtractLineCollection) {
+        extractTextElement.add(element);
+      }
+      _whiteSpace = <TextElement>[];
+      // } else {
+      //   _whiteSpace.add(element);
+      // }
     }
   }
 
