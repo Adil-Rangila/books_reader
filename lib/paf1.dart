@@ -64,7 +64,10 @@ class _PDF1State extends State<PDF1> {
               ),
               onPressed: () async {
                 searchResult = await _pdfViewerController.searchText(
-                    'of Zorro', b1LastPage);
+                  'The fat landlord agreed',
+                  b1LastPage - 1,
+                  searchOption: TextSearchOption.caseSensitive,
+                );
 
                 log('Total instance count: ${searchResult.totalInstanceCount}');
               },

@@ -732,6 +732,13 @@ class PdfTextExtractor {
       List<MatchedItem> result) {
     if (renderedStringCollection.isNotEmpty &&
         renderedStringCollection[0] != '') {
+      print(searchString.length);
+      print(renderedStringCollection.length);
+      print(combinedGlyphLength);
+      print(glyphListCollection.length);
+      print(result.length);
+
+      // renderedStringCollection = ['Thefatlandlordagreed'];
       final Map<String, List<int>> mappedIndexes = <String, List<int>>{};
       final List<int> textLengthCollection = <int>[];
       for (int i = 0; i < renderedStringCollection.length; i++) {
@@ -754,7 +761,10 @@ class PdfTextExtractor {
           int startIndex = 0;
           final int length = currentText.length;
           for (int i = 0; i < renderedStringCollection.length; i++) {
-            while (startIndex <= textLengthCollection[i] &&
+            while (startIndex <= textLengthCollection
+            
+            
+            [i] &&
                 renderedStringCollection[i].contains(currentText, startIndex)) {
               int index =
                   renderedStringCollection[i].indexOf(currentText, startIndex);

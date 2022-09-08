@@ -1,0 +1,65 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "books_reader",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "books_reader (profile mode)",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "books_reader (release mode)",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        },
+        {
+            "name": "syncfusion_flutter_pdfviewer",
+            "cwd": "syncfusion_flutter_pdfviewer",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "syncfusion_flutter_pdfviewer (profile mode)",
+            "cwd": "syncfusion_flutter_pdfviewer",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "syncfusion_flutter_pdfviewer (release mode)",
+            "cwd": "syncfusion_flutter_pdfviewer",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        },
+        {
+            "name": "syncfusion_flutter_pdf",
+            "cwd": "syncfusion_flutter_pdfviewer\\syncfusion_flutter_pdf",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "syncfusion_flutter_pdf (profile mode)",
+            "cwd": "syncfusion_flutter_pdfviewer\\syncfusion_flutter_pdf",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "syncfusion_flutter_pdf (release mode)",
+            "cwd": "syncfusion_flutter_pdfviewer\\syncfusion_flutter_pdf",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        }
+    ]
+}
