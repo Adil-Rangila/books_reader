@@ -146,7 +146,7 @@ class SfPdfViewer extends StatefulWidget {
     this.pageLayoutMode = PdfPageLayoutMode.continuous,
     this.currentSearchTextHighlightColor =
         const Color.fromRGBO(229, 110, 0, 0.6),
-    this.otherSearchTextHighlightColor = const Color.fromRGBO(229, 110, 0, 0.3),
+    this.otherSearchTextHighlightColor = const Color.fromRGBO(229, 110, 0, 0.6),
     this.password,
     this.canShowPasswordDialog = true,
     this.canShowHyperlinkDialog = true,
